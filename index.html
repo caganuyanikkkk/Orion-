@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Orion">
+  <meta name="theme-color" content="#0A0A0B">
+  <meta name="description" content="Orion — a calm, editorial gym tracker with progressive overload built in.">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0A0B'/%3E%3Ccircle cx='9' cy='14' r='1.6' fill='%23F5A524'/%3E%3Ccircle cx='16' cy='12' r='2' fill='%23F5A524'/%3E%3Ccircle cx='23' cy='15' r='1.4' fill='%23F5A524'/%3E%3C/svg%3E">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="app.css">
+  <title>Orion — Gym Tracker</title>
+</head>
+<body>
+
+  <!-- ─── TOPBAR ───────────────────────────────────────────── -->
+  <header class="topbar">
+    <div class="brand" aria-label="Orion">
+      <svg class="brand__belt" viewBox="0 0 40 14" aria-hidden="true">
+        <circle cx="6"  cy="9" r="3.0" fill="currentColor" opacity="0.85"/>
+        <circle cx="20" cy="4" r="3.5" fill="currentColor"/>
+        <circle cx="34" cy="10" r="2.8" fill="currentColor" opacity="0.8"/>
+      </svg>
+      <span class="brand__word">ORION</span>
+    </div>
+    <div class="date" id="topbarDate"></div>
+  </header>
+
+  <!-- ─── APP VIEWS ────────────────────────────────────────── -->
+  <main class="app">
+    <section id="view-home"    class="view" aria-label="Home"></section>
+    <section id="view-log"     class="view" aria-label="Log" hidden></section>
+    <section id="view-plan"    class="view" aria-label="Plan" hidden></section>
+    <section id="view-history" class="view" aria-label="History" hidden></section>
+  </main>
+
+  <!-- ─── BOTTOM NAV ───────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Primary">
+    <button type="button" class="nav__tab" data-tab="home" aria-label="Home">
+      <span class="nav__icon" data-icon="home"></span>
+      <span class="nav__label">Home</span>
+    </button>
+    <button type="button" class="nav__tab" data-tab="plan" aria-label="Plan">
+      <span class="nav__icon" data-icon="trendingUp"></span>
+      <span class="nav__label">Plan</span>
+    </button>
+    <button type="button" class="nav__log" id="navLog" data-tab="log" aria-label="Log a session">
+      <span class="nav__log-inner" data-icon="plus"></span>
+    </button>
+    <button type="button" class="nav__tab" data-tab="history" aria-label="History">
+      <span class="nav__icon" data-icon="calendar"></span>
+      <span class="nav__label">History</span>
+    </button>
+    <button type="button" class="nav__tab nav__tab--ghost" aria-hidden="true" tabindex="-1"></button>
+  </nav>
+
+  <!-- ─── TOAST ────────────────────────────────────────────── -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
